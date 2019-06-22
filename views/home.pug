@@ -1,1 +1,8 @@
-p Hello
+extends layouts/main
+//-
+    main의 레이아웃을 확장하고 추가적인 것을 더하기 위해 1행 내용 삽입
+    메인의 내용을 복붙함
+    ==>copy whole layouts/main.pug so we can overwrit
+block content
+    p Home
+//-  메인의 탬플릿에서 block content 자리에 p Hello 추가
