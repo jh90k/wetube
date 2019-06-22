@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 //import { userRouter } from "./router/userRouter";
 /*7행을 저렇게 쓴 이유는 router.js가 디폴트로 export되지 않으므로*/
-import routes from "./routes"
+import routes from "./routes";
 import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
@@ -29,7 +29,7 @@ const middleware = (req, res, next) => {
     res.send("not happening")
 };
 
-app.use("routes.Home", globalRouter);
+app.use("/", globalRouter);
 app.use("routes.user", userRouter);
 //app.use means somebody goes to /user, i'm gonna use whole router.js
 app.use("routes.videos", videoRouter);
