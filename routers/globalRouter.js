@@ -1,6 +1,6 @@
 import express from "express";
 import routes from "../routes";
-import { home, search } from "../controllers/videoController";
+import { search, home } from "../controllers/videoController";
 import { join, login, logout } from "../controllers/userController";
 // '../' means outside the folder
 

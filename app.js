@@ -17,6 +17,7 @@ const app = express();
 //const handleProfile = (req, res) => res.send("You are on my profile");
 /*above thing, we call it arrow function*/
 
+app.set("view engine", "pug");
 app.use(cookieParser());
 //쿠키는 사용자 인증 시 사용되는데, 쿠키 파서 덕에 쿠키를 사용할 수 있음
 app.use(bodyParser.json({extended: true}));
@@ -33,15 +34,13 @@ const middleware = (req, res, next) => {
     res.send("not happening")
 };
 
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
+
 /*app.use("/", globalRouter);
 app.use("routes.user", userRouter);
 //app.use means somebody goes to /user, i'm gonna use whole router.js
 app.use("routes.videos", videoRouter);*/
-globalRouter.get(routes.home, home);
-globalRouter.get(routes.search, search);
-globalRouter.get(routes.join, join);
-globalRouter.get(routes.login, login);
-globalRouter.get(routes.logout, logout);
-
 
 export default app;
