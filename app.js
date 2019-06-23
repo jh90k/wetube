@@ -4,12 +4,11 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-//import { userRouter } from "./router/userRouter";
-/*7행을 저렇게 쓴 이유는 router.js가 디폴트로 export되지 않으므로*/
+import { localsMiddleware } from "./middlewares";
 import routes from "./routes";
-import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
 
 const app = express();
 
@@ -17,6 +16,8 @@ const app = express();
 //const handleProfile = (req, res) => res.send("You are on my profile");
 /*above thing, we call it arrow function*/
 
+app.use(helmet());
+//helmet makes app more safe
 app.set("view engine", "pug");
 app.use(cookieParser());
 //쿠키는 사용자 인증 시 사용되는데, 쿠키 파서 덕에 쿠키를 사용할 수 있음
@@ -27,12 +28,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 //아바타의 사진 등 사용자 정보 전송
 app.use(morgan("dev"));
 //loggin every event that is caused at app.
-app.use(helmet());
-//helmet makes app more safe
 
-const middleware = (req, res, next) => {
-    res.send("not happening")
-};
+//const middleware = (req, res, next) => {
+//    res.send("not happening")
+//};
+
+app.use(localsMiddleware);
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
