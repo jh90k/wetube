@@ -24,10 +24,12 @@ export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 export const postUpload = (req, res) => {
   const {
-    body: { file, title, description }
+    body
   } = req;
+  console.log(body);
   // To Do: Upload and save video
-  res.redirect(routes.videoDetail(324393));
+  res.render("upload", { pageTitle: "Upload" });
+  //res.redirect(routes.videoDetail(324393));
 };
 export const videoDetail = (req, res) =>
   res.render("videoDetail", { pageTitle: "Video Detail" });
