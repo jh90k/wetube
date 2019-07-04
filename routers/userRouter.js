@@ -1,10 +1,10 @@
 import express from "express";
 import routes from "../routes";
 import {
-    editProfile,
-    changePassword,
-    userDetail    
-  } from "../controllers/userController";
+  editProfile,
+  changePassword,
+  userDetail
+} from "../controllers/userController";
 
 const userRouter = express.Router();
 /*userRouter를 보냄*/

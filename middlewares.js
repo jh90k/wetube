@@ -1,7 +1,7 @@
 import multer from "multer";
 import routes from "./routes";
 
-const multerVideo = multer({dest:"videos/"});
+const multerVideo = multer({ dest: "uploads/videos/" });
 //dest means folder of server
 
 export const localsMiddleware = (req, res, next) => {

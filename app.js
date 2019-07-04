@@ -19,11 +19,12 @@ const app = express();
 app.use(helmet());
 //helmet makes app more safe
 app.set("view engine", "pug");
+app.use("/uploads", express.static("uploads"));
 app.use(cookieParser());
 //쿠키는 사용자 인증 시 사용되는데, 쿠키 파서 덕에 쿠키를 사용할 수 있음
-app.use(bodyParser.json({extended: true}));
+app.use(bodyParser.json({ extended: true }));
 /*서버가 json을 이해하게 만드는 코드*/
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 /*서버가 form에서 받은 데이터를 이해하게 만드는 코드*/
 //아바타의 사진 등 사용자 정보 전송
 app.use(morgan("dev"));
