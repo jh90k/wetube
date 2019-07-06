@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 import express from "express";
 import routes from "../routes";
 import {
@@ -7,7 +8,7 @@ import {
 } from "../controllers/userController";
 
 const userRouter = express.Router();
-/*userRouter를 보냄*/
+/*userRouter를 보냄 */
 
 userRouter.get(routes.editProfile, editProfile);
 userRouter.get(routes.changePassword, changePassword);

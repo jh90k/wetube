@@ -13,7 +13,7 @@ import { uploadVideo } from "../middlewares";
 
 const videoRouter = express.Router();
 
-//아랫줄처럼 수정 videoRouter.get(routes.videos, videos);
+// 아랫줄처럼 수정 videoRouter.get(routes.videos, videos)
 
 videoRouter.get(routes.upload, getUpload);
 videoRouter.post(routes.upload, uploadVideo, postUpload);
@@ -23,4 +23,4 @@ videoRouter.post(routes.editVideo(), postEditVideo);
 videoRouter.get(routes.deleteVideo(), deleteVideo);
 
 export default videoRouter;
-//it means whole videoRouter.js is gonna be exported.
+// it means whole videoRouter.js is gonna be exported.

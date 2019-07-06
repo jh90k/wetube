@@ -2,7 +2,7 @@ import multer from "multer";
 import routes from "./routes";
 
 const multerVideo = multer({ dest: "uploads/videos/" });
-//dest means folder of server
+// dest means folder of server
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
@@ -15,5 +15,5 @@ export const localsMiddleware = (req, res, next) => {
 };
 
 export const uploadVideo = multerVideo.single("videoFile");
-//.single means ppl can upload only one
-//inside ''(namepart), file's name from upload.pug
+// .single means ppl can upload only one
+// inside ''(namepart), file's name from upload.pug

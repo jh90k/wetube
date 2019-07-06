@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 // Global
 const HOME = "/";
 const JOIN = "/join";
@@ -17,7 +18,7 @@ const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
-//:id means it can change anytime
+// :id means it can change anytime
 
 const routes = {
   home: HOME,

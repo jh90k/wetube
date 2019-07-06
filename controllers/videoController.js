@@ -11,9 +11,9 @@ export const home = async (req, res) => {
   }
 };
 
-//export const home = (req, res) => res.send("Home");
-//pug를 사용하기 위해 send에서 render로 변경
-//렌더 함수의 인자로 템플릿 파일의 이름을 쓰면되며 소문자만 사용!
+// export const home = (req, res) => res.send("Home");
+// pug를 사용하기 위해 send에서 render로 변경
+// 렌더 함수의 인자로 템플릿 파일의 이름을 쓰면되며 소문자만 사용!
 export const search = async (req, res) => {
   const {
     query: { term: searchingBy }
@@ -87,6 +87,8 @@ export const deleteVideo = async (req, res) => {
   } = req;
   try {
     await Video.findOneAndRemove({ _id: id });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
   res.redirect(routes.home);
 };

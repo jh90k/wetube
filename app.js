@@ -1,6 +1,7 @@
+/* eslint-disable spaced-comment */
 import express from "express";
 import morgan from "morgan";
-/*logger is morgan's nickname*/
+/* logger is morgan's nickname */
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
@@ -12,6 +13,7 @@ import globalRouter from "./routers/globalRouter";
 
 const app = express();
 
+// eslint-disable-next-line spaced-comment
 //const handleHome = (req, res) => res.send("Hello from Seoul");
 //const handleProfile = (req, res) => res.send("You are on my profile");
 /*above thing, we call it arrow function*/
