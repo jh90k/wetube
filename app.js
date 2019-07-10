@@ -22,6 +22,7 @@ app.use(helmet());
 //helmet makes app more safe
 app.set("view engine", "pug");
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("static"));
 app.use(cookieParser());
 //쿠키는 사용자 인증 시 사용되는데, 쿠키 파서 덕에 쿠키를 사용할 수 있음
 app.use(bodyParser.json({ extended: true }));
