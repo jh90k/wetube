@@ -11,6 +11,7 @@ const USERS = "/users";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 const USER_DETAIL = "/:id";
+const ME = "/me";
 
 // Videos
 const VIDEOS = "/videos";
@@ -19,6 +20,14 @@ const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
 // :id means it can change anytime
+
+// Github
+const GITHUB = "/auth/github";
+const GITHUB_CALLBACK = "/auth/github/callback";
+
+// Facebook
+const FB = "/auth/facebook";
+const FB_CALLBACK = "/autho/facebook/callback";
 
 const routes = {
   home: HOME,
@@ -58,7 +67,12 @@ const routes = {
     } else {
       return DELETE_VIDEO;
     }
-  }
+  },
+  github: GITHUB,
+  githubCallback: GITHUB_CALLBACK,
+  facebook: FB,
+  facebookCallback: FB_CALLBACK,
+  me: ME
 };
 
 export default routes;
