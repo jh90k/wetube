@@ -41,6 +41,7 @@ function goFullScreen() {
   }
   fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
   fullScrnBtn.removeEventListener("click", goFullScreen);
+  // eslint-disable-next-line no-use-before-define
   fullScrnBtn.addEventListener("click", exitFullScreen);
 }
 
