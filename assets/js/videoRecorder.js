@@ -14,8 +14,8 @@ const handleVideoData = event => {
   link.click();
 };
 
-const stopRecording = async () => {
-  await videoRecorder.stop();
+const stopRecording = () => {
+  videoRecorder.stop();
   recordBtn.removeEventListener("click", stopRecording);
   recordBtn.addEventListener("click", getVideo);
   recordBtn.innerHTML = "Start recording";
@@ -41,7 +41,7 @@ const getVideo = async () => {
     streamObject = stream;
     startRecording();
   } catch (error) {
-    recordBtn.innerHTML = "😥 Cannot record";
+    recordBtn.innerHTML = "☹️ Cant record";
   } finally {
     recordBtn.removeEventListener("click", getVideo);
   }
@@ -49,7 +49,6 @@ const getVideo = async () => {
 
 function init() {
   recordBtn.addEventListener("click", getVideo);
-  recordBtn.onclick = getVideo;
 }
 
 if (recorderContainer) {
