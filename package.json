@@ -4,6 +4,10 @@
   "description": "Cloning Youtube with Vanilla and Node JS",
   "author": "Jenna Kang",
   "license": "ISC",
+  "engines": {
+    "npm": "6.10.0",
+    "node": "10.16.0"
+  },
   "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/node": "^7.5.5",
@@ -55,7 +59,7 @@
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
     "prebuild": "rd /s /q build",
     "tunnel": "ngrok http 4000",
-    "start": "node build/init.js",
+    "start": "PRODUCTION=true node build/init.js",
     "prestart": "npm run build"
   },
   "devDependencies": {
