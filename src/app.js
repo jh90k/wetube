@@ -1,4 +1,5 @@
 /* eslint-disable spaced-comment */
+import "@babel/polyfill";
 import express from "express";
 import morgan from "morgan";
 /* logger is morgan's nickname */
@@ -8,6 +9,7 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import mongoose from "mongoose";
 import session from "express-session";
+import path from "path";
 import MongoStore from "connect-mongo";
 import { localsMiddleware } from "./middlewares";
 import routes from "./routes";
@@ -32,8 +34,8 @@ console.log(process.env.COOKIE_SECRET);
 app.use(helmet());
 //helmet makes app more safe
 app.set("view engine", "pug");
-app.use("/uploads", express.static("uploads"));
-app.use("/static", express.static("static"));
+app.set("views", path.join(__dirname, "views"));
+app.use("/static", express.static(path.join(__dirname, "static")));
 app.use(cookieParser());
 //쿠키는 사용자 인증 시 사용되는데, 쿠키 파서 덕에 쿠키를 사용할 수 있음
 app.use(bodyParser.json({ extended: true }));
