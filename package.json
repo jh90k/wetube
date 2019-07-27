@@ -5,7 +5,8 @@
   "author": "Jenna Kang",
   "license": "ISC",
   "engines": {
-    "npm": "6.x"
+    "npm": "6.x",
+    "node": "10.x"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
