@@ -38,6 +38,9 @@
       transform: rotate(-90deg);
       z-index: 10;
       width: 80px;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
       // border-radius: 15px;
 
       input {
@@ -58,6 +61,17 @@
         }
       }
     }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #bb2f2a;
+      cursor: pointer;
+    }
+
     .videoPlayer__column:last-child {
       justify-self: end;
     }

@@ -56,6 +56,11 @@
         &:not(:last-child) {
           margin-bottom: 15px;
         }
+        .deleteComment {
+          width: 50px;
+          margin-right: 10px;
+          color: #bb2f2a;
+        }
       }
     }
   }
